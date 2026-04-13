@@ -3,9 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# ======================
-# CONFIG & STYLE
-# ======================
 st.set_page_config(page_title="Analisis Penyewaan Sepeda", layout="wide")
 
 # Custom CSS untuk tampilan lebih clean
@@ -120,13 +117,3 @@ with col_right:
     ax2.set_ylabel("")
     ax2.set_xlabel("")
     st.pyplot(fig2)
-
-# ======================
-# INSIGHTS
-# ======================
-with st.expander("Tampilkan Temuan Utama", expanded=True):
-    st.write(f"""
-    * **Lonjakan Permintaan:** Aktivitas tertinggi pada jam **{peak_hour}:00** dengan rata-rata sekitar **{int(hourly_data.max())} sepeda per jam**.
-    * **Faktor Lingkungan:** Pengguna menunjukkan preferensi penyewaan yang kuat pada kondisi cuaca **{weather_data.idxmax()}**.
-    * **Rekomendasi Operasional:** Pastikan ketersediaan unit sepeda di titik-titik penyewaan setidaknya 1-2 jam sebelum periode jam puncak tersebut.
-    """)
